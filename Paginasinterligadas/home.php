@@ -1,0 +1,10 @@
+<?php
+    require_once './shared/header.php';
+?>
+    <h2>Página inicial</h2>
+    <p class="text-bg-light">ASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasadASDSAds d sa dsa dsa dsadsadsadsadsa dsa d sad sadsad sad sadsadsa dsadsd sad sa dsadsadsa dsadsadsad sadsadsadsa sasad</p>
+    
+  
+<?php
+    require_once './shared/footer.php'; 
+?>

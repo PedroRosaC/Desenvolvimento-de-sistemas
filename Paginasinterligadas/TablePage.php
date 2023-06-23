@@ -3,12 +3,8 @@
         require_once './shared/header.php'
     ?>
 <div>
-    <script>
-        $(document).ready(function (){
-            $('#example').DataTable();
-        });
-        </script>
-    <table class="table table-responsive table-bordered table-striped table-primary">
+    
+       <table id="example" class="table table-responsive table-bordered table-striped table-primary">
         <thead>
             <tr>
                 <th>
@@ -63,6 +59,11 @@
             
         </tbody>
     </table>
+        <script>
+        $(document).ready(function (){
+            $('#example').DataTable();
+        });
+    </script>
 </div>
     <?php
         require_once './shared/footer.php'
