@@ -10,7 +10,7 @@ if ($_POST) {
         session_start();
         //Criei a sessão "login"
         $_SESSION['login'] = $email;
-        header('location:../home.php');
+        header('location: ../home.php');
     } else {
         //Login inválido 
         header('location:../index.php?cod=172');
