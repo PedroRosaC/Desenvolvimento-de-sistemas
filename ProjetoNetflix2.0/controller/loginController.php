@@ -9,7 +9,20 @@ if ($_POST) {
         session_start();
         
         $_SESSION['login'] = $email;
+        
+        if(isset($lembrar)){
+            if($lembrar == 1){
+                setcookie('email', $email, time() + (86400 * 30), "/");
+            }
+        }else{
+            if(isset($_COOKIE)){
+                setcookie("email", "", time() - (86400 * 30), "/");
+            }
+        }
+        
+        
         header('location:../home.php');
+        
     } else {
         header('location:../index.php?cod=171');
     }

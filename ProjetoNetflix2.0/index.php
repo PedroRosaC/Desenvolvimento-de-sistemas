@@ -43,7 +43,7 @@
             
             form{
                 margin-top: 5%;
-                width: 60vh;
+                width: 50vh;
                 margin-left: 10%;
             }
             .b{
@@ -75,7 +75,17 @@
                 <div class="itens">
                 <h2 style="color:white;">Entrar</h2>
                 <div class="mb-3 mt-3">
-                    <input type="text" class="form-control" id="email" placeholder="E-mail ou número de telefone" name="email" style="border:none; background-color: #333333;">
+                    
+                <?php 
+                    if(!isset($_COOKIE['email'])){
+                        echo('<input type="email" class="form-control" id="email" placeholder="E-mail '
+                                . 'ou número de telefone" name="email" style="border:none; background-color: #333333;">');
+                        
+                    }else{
+                        echo('<input type="email" class="form-control" id="email" placeholder="E-mail ou número de telefone" name="email" value="'.$_COOKIE['email'].'" required="" style="border:none; background-color: #333333;">');
+
+                    }
+                    ?>
                 </div>
                 <div class="mb-3 mt-3">
                     <input type="password" class="form-control" id="senha" placeholder="Senha" name="senha" style='border:none; background-color: #333333;'>
@@ -97,13 +107,21 @@
                     ?>
                 </div>
                 <div class="row">
-                    <div class="col-md">
-                            <input type="checkbox" id="checkbox"  name="checkbox"/>
-                            <label for="checkbox" class="c">Lembre-se de mim</label>
+                    <div class="col-md"> <?php 
+                    if(isset($_COOKIE['email'])){
+                        echo('<input type="checkbox" class="form-check-input" id="lembrar" name="lembrar" value="1">');
+                        
+                    }else{
+                        echo('<input type="checkbox" class="form-check-input" id="lembrar" name="lembrar" value="1">');
+
+                    }
+                    ?>
+                            <label for="lembrar" class="c">Lembre-se de mim</label>
                     </div>
                     <div class="col-md">
                             <a href="#" class="b c">Precisa de ajuda?</a>
                     </div>
+                   
                 </div>
                 <br>
                 <br>
