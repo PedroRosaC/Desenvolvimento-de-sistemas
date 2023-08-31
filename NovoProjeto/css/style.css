@@ -1,0 +1,21 @@
+ body{
+     background-image: linear-gradient(45deg, #000000, #9900ff);
+ }
+.bg{
+    color: #ffffff;
+    background-image: url("../img/blackhole.jpg");
+    position: absolute;
+    top:30%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    padding-top: 5px;
+    border-radius: 7px;
+}
+.input-style{
+    background-color: #cc99ff;
+    border: none;
+    border-radius: 2px;
+    padding-bottom: 5%;
+    
+}
