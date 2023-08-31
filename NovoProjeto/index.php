@@ -10,7 +10,7 @@
     <body>
         <div class="bg"><!-- fundo do login -->
             <h2>Entrar</h2>
-            <form method="POST">
+            <form method="POST" action="../control/login.php">
                 <label for="email">Email: </label>
                 <input type="email" class="input-style" name="email" id="email" placeholder="Insira seu email">
                 <br><br>
