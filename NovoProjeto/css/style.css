@@ -2,7 +2,11 @@
      background-image: linear-gradient(45deg, #000000, #9900ff);
  }
 .bg{
+   
+    
     color: #ffffff;
+    border-radius: 8px;
+    background: 100%;
     background-image: url("../img/blackhole.jpg");
     position: absolute;
     top:30%;
@@ -10,13 +14,28 @@
     transform: translate(-50%, -50%);
     padding: 40px;
     padding-top: 5px;
-    border-radius: 7px;
+    padding-bottom: 5px;
+    background-repeat: no-repeat;
 }
 .input-style{
     background-color: #cc99ff;
     border: none;
     border-radius: 2px;
-    padding-bottom: 3%;
+    padding-bottom: 2%;
     padding-top: 2%;
-    
+}
+.submit-style{
+     background-color: #cc99ff;
+    border-radius: 2px;
+}
+.aviso{
+    color: #ffffff;
+    border-radius: 3px;
+    border-color: #ff6666;
+    background-color:#ff9966;
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
 }

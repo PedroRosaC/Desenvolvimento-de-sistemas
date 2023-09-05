@@ -1,7 +1,7 @@
 <?php
 if($_POST){
-    $email = $POST['email'];
-    $nome = $POST['nome'];
+    $email = $_POST['email'];
+    $nome = $_POST['nome'];
     $informacoes = array('email'=>'b@b', 'nome'=>'pedro');
 
     if ($email == $dados['email'] && $senha == $dados['senha']) {
