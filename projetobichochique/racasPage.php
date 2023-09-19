@@ -4,8 +4,11 @@
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <link href="css/cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_css_bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <script src="js/cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_js_bootstrap.bundle.min.js" type="text/javascript"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-3.7.0.min.js" type="text/javascript"></script>
+    <link href="css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
     <body class="container">
         <table class="table table-bordered">
             <thead>
@@ -35,4 +38,11 @@
             </tbody>
         </table>
     </body>
+    <script>
+        $(document).ready(function (){
+           $('#racasTable').DataTable({
+               
+           }); 
+        });
+    </script>
 </html>

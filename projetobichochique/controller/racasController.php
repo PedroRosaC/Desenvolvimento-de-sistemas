@@ -5,12 +5,9 @@ if($_POST){
     
 }else if ($_REQUEST){
     
+}else{
+    loadAll();
 }
-function carregarDados(){
-    $db = new ConexaoMysql();
-    $db->Conectar();
-    $sql= "select* from racas";
-    $resultlist = $db->Consultar($sql);
-    $db->Desconectar();
-    return $resultlist;
-} 
+function loadAll () {
+    $racas = 
+}
