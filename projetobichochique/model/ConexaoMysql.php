@@ -52,7 +52,7 @@ class ConexaoMysql {
             }
         } catch (Exception $exc) {
             //Desconectar....
-            $this->Desconectar();
+            $this->Desconecta();
         }
     }
 
