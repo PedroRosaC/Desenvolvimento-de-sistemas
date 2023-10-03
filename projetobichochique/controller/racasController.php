@@ -1,31 +1,41 @@
 <?php
-require_once './model/racasModel.php';
 
-if($_POST){
-    //inserir algo na bd (cadastrar)
-    $raca= new racasModel();
-    $raca->setNome($POST['$nome']);
-    $raca->setDescricao($POST['$descricao']);
-    $raca->setFaixaPeso($POST['$faixaPeso']);
-    $raca->setFaixaPreco($POST['$faixaPreco']);
-    $raca->Insert();
-}else if($total == 1){
-    header('location:cadasrarRacasPage.php?cod=success');
-    //editar algo na bd ou excluir algo
+
+
+if ($_POST) {
+    require_once '../model/racasModel.php';
+    $raca = new racasModel();
+    $raca->setNome($_POST['nome']);
+    $raca->setDescricao($_POST['descricao']);
+    $raca->setFaixaPreco($_POST['faixapreco']);
+    $raca->setFaixaPeso($_POST['faixapeso']);
+    $total = $raca->Insert();
+
+    if ($total == 1) {
+        header('location:../cadastrarRacasPage.php?cod=success');
+        //editar algo na bd ou excluir algo
+    } else {
+        header('location:../cadastrarRacasPage.php?cod=error');
+    }
+}else if($_REQUEST){
+    
 }else{
-    header('location:cadasrarRacasPage.php?cod=error');
+    
     loadAll();
 }
 
-function loadAll(){
+function loadAll() {
+    require_once './model/racasModel.php';
     //Crio um objeto do tipo raças
     $racas = new racasModel();
     $racasList = $racas->loadAll();
     return $racasList;
 }
-function loadByid($id){
+
+function loadByid($id) {
+    require_once './model/racasModel.php';
     //Crio um objeto do tipo raças
     $racas = new racasModel();
-    $racas ->loadByid($id);
+    $racas->loadByid($id);
     return $racas;
 }

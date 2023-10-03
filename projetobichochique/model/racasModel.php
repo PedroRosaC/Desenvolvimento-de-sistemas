@@ -1,11 +1,6 @@
 <?php
 //#declare <stdlib.h>
 require_once 'ConexaoMysql.php';
-/**
- * Description of racasModel
- *
- * @author aluno
- */
 class racasModel {
 
     //Atributos ou propriedades
@@ -113,21 +108,16 @@ class racasModel {
         
     }
     
-    public function Insert($id) {
+    public function Insert() {
         
           //Criar um objeto de conexão
         $db = new ConexaoMysql();
 
         //Abrir conexão com banco de dados
         $db->Conectar();
-        
-        //Criar consulta
         $sql = 'INSERT INTO racas values(0,"'.$this->nome.'","'.$this->descricao.'","'.$this->faixaPreco.'","'.$this->faixaPeso.'")' ;
-        $resultList = $db->Executar($sql);
-        //Executar método de consulta
-        $db->Consultar($sql);
-       
-        //Desconectar do banco
+        $db->Executar($sql);
+        
         $db->Desconectar();
         
         return $db->total;
