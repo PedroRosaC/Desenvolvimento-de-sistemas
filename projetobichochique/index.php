@@ -13,7 +13,7 @@ and open the template in the editor.
         <?php
         $enderecoServidor = 'localhost';
         $usuario = 'root';
-        $senha = 'pedropedro01';
+        $senha = 'asasasas';
         $bancoDados ='bichochique';
         
         $mysqli = new mysqli($enderecoServidor, $usuario,$senha,$bancoDados);

@@ -8,7 +8,7 @@
         <link href="css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
         <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
         <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <body>
+    <body class="container">
         <table id="racasTable" class="table table-bordered">
             <thead>
             <th>Nome</th>
@@ -32,27 +32,28 @@
                     echo '<td>';
                         echo $raca['faixa_preco'];
                     echo '</td>';
-                     echo '<td>';
-                        echo '<a class="btn btn-success" href="cadastrarRacasPage.php?cod=edit&&id='.$raca['id'].'"> Editar </a>';
-                        echo ' ';
-                        echo '<a class="btn btn-danger" href="cadastrarRacasPage.php?cod=erase"> Excluir </a>';
+                    //Operações
+                    echo '<td>';
+                            echo '<a class="btn btn-primary" href="cadastrarRacasPage.php?cod=edit&&id='.$raca['id'].'">Editar</a>';
+                            echo ' ';
+                            echo '<a class="btn btn-danger" href="./controller/racasController.php?cod=del&&id='.$raca['id'].'">Excluir</a>';
                     echo '</td>';
                 echo '</tr>';
             }
-            $racas= loadByid(5);
-            echo $racas->getNome();
+
+            $raca = loadById(10);
+            echo $raca->getNome();
             echo '<hr>';
-            $racas->setNome('Brasil');
-            echo $racas->getNome();
-            
+            echo $raca->getFaixaPeso();
             ?>
         </tbody>
     </table>
     <script>
-        $(document).ready(function () {
-            $('#racasTable').DataTable({
-              
+    $(document).ready(function () {
+        $('#racasTable').DataTable({
+
         });
+    });
     </script>
 </body>
 </html>

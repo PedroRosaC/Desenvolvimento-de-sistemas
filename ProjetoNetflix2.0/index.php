@@ -15,14 +15,7 @@
             }
             
 
-            p{
-                <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-                <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
-                <script src="js/jquery-3.7.0.min.js" type="text/javascript"></script>
-                <link href="css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
-                <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
-                text-align: justify;
-            }
+           
             body{
                height:100%; 
                justify-content: center; 
@@ -109,7 +102,7 @@
                 <div class="row">
                     <div class="col-md"> <?php 
                     if(isset($_COOKIE['email'])){
-                        echo('<input type="checkbox" class="form-check-input" id="lembrar" name="lembrar" value="1">');
+                        echo('<input type="checkbox" class="form-check-input" id="lembrar" checked="" name="lembrar" value="1">');
                         
                     }else{
                         echo('<input type="checkbox" class="form-check-input" id="lembrar" name="lembrar" value="1">');
