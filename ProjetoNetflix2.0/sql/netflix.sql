@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 10-Out-2023 às 14:34
+-- Tempo de geração: 17-Out-2023 às 13:33
 -- Versão do servidor: 8.0.30
 -- versão do PHP: 7.4.26
 
@@ -24,6 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `categoria`
+--
+
+DROP TABLE IF EXISTS `categoria`;
+CREATE TABLE IF NOT EXISTS `categoria` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) NOT NULL,
+  `descricao` varchar(340) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `filme`
 --
 
@@ -31,11 +45,12 @@ DROP TABLE IF EXISTS `filme`;
 CREATE TABLE IF NOT EXISTS `filme` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
-  `lançamento_Netflix` datetime NOT NULL,
-  `Perfis_id` int NOT NULL,
-  `Perfis_Usuário_id` int NOT NULL,
-  PRIMARY KEY (`id`,`Perfis_id`,`Perfis_Usuário_id`),
-  KEY `fk_filme_Perfis1_idx` (`Perfis_id`,`Perfis_Usuário_id`)
+  `lancamento_netflix` datetime NOT NULL,
+  `categoria_id` int NOT NULL,
+  `perfis_id` int NOT NULL,
+  PRIMARY KEY (`id`,`categoria_id`),
+  KEY `fk_filme_categoria1_idx` (`categoria_id`),
+  KEY `fk_filme_perfis1_idx` (`perfis_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
@@ -48,24 +63,23 @@ DROP TABLE IF EXISTS `perfis`;
 CREATE TABLE IF NOT EXISTS `perfis` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
-  `kidsOuNao` char(1) NOT NULL,
-  `Usuário_id` int NOT NULL,
-  PRIMARY KEY (`id`,`Usuário_id`),
-  KEY `fk_Perfis_Usuário_idx` (`Usuário_id`)
+  `kids_ou_nao` char(1) NOT NULL,
+  `usuario_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_perfis_usuario1_idx` (`usuario_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuário`
+-- Estrutura da tabela `usuario`
 --
 
-DROP TABLE IF EXISTS `usuário`;
-CREATE TABLE IF NOT EXISTS `usuário` (
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
   `id` int NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
   `senha` varchar(45) NOT NULL,
-  `Nome` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
@@ -77,13 +91,14 @@ CREATE TABLE IF NOT EXISTS `usuário` (
 -- Limitadores para a tabela `filme`
 --
 ALTER TABLE `filme`
-  ADD CONSTRAINT `fk_filme_Perfis1` FOREIGN KEY (`Perfis_id`,`Perfis_Usuário_id`) REFERENCES `perfis` (`id`, `Usuário_id`);
+  ADD CONSTRAINT `fk_filme_categoria1` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`),
+  ADD CONSTRAINT `fk_filme_perfis1` FOREIGN KEY (`perfis_id`) REFERENCES `perfis` (`id`);
 
 --
 -- Limitadores para a tabela `perfis`
 --
 ALTER TABLE `perfis`
-  ADD CONSTRAINT `fk_Perfis_Usuário` FOREIGN KEY (`Usuário_id`) REFERENCES `usuário` (`id`);
+  ADD CONSTRAINT `fk_perfis_usuario1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
