@@ -1,11 +1,13 @@
 <?php
     require_once 'shared/header.php';
+require_once './controller/autenticationController.php';
+    
 ?>
 <body style="margin-left: 30px;">
     <header style="display: flex; flex-direction: row; width: 100%;">
             <img src="img/Netflix-Logo.png" style="width: 10%;height: 10%; margin-left: 10%;margin-top: 45px;" >
             <a style="text-decoration: none; color: white; margin:50px;" href="./home.php">Perfis</a>
-            <a style="text-decoration: none; color: red;margin:50px;" href="./controller/logoutController.php?cod=172">Logout</a>
+            <a style="text-decoration: none; color: red;margin:50px;" href="./controller/logoutController.php?cod=logout">Logout</a>
         </header>
     <div class="filmes">
         
@@ -14,7 +16,7 @@
             <?php
                $filmes1 = array("img/filmes/BB.jpg","img/filmes/bakihanma.jpg","img/filmes/black mirror.jpg","img/filmes/bladerunner2049.jpg","img/filmes/cyberpunk.jpg");
                $filmes2 = array("img/filmes_infantis/castelo.jpg","img/filmes_infantis/gato.png","img/filmes_infantis/barbie.jpg","img/filmes_infantis/elementos.jpg","img/filmes_infantis/shrek.jpg");
-               $filmes3 = array("img/filmes/bladerunner.jpg","img/filmes/DARK.jpg" ,"img/filmes/bladerunner2049.jpg","img/filmes/vikings.jpg","img/filmes/peakyblinders.jpg" );
+              
                
                $escolhido = array();
                @$cod = $_REQUEST['cod'];
@@ -23,8 +25,6 @@
                        $escolhido = $filmes1;
                    }else if($cod == 2){
                        $escolhido = $filmes2;
-                   }else if($cod == 3){
-                       $escolhido = $filmes3;
                    } else {
                         // sla
                         header("location:home.php");
