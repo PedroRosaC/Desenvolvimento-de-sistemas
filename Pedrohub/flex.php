@@ -113,6 +113,9 @@ require_once 'shared/header.php';
     </section>
 
     <h1 style="color: bisque;">Order </h1>
+    <div style="width: 300px; height: fit-content;  position: absolute;">
+        <p>Serve para mudar a ordem dos objetos.</p>
+    </div>
     <section class="container3">
         <div class="item3" style="order: 1;"> item 1 "order: 1;"</div>
         <div class="item3" style="order: 4;"> item 2 "order: 4;"</div>
