@@ -6,5 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Ctism\\Aula2108\\' => array($baseDir . '/src'),
+    'Model\\' => array($baseDir . '/src/model'),
+    'Controller\\' => array($baseDir . '/src/controller'),
 );
