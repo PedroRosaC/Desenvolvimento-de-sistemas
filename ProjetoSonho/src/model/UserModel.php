@@ -7,7 +7,7 @@ class UserModel{
     protected $email;
     protected $senha;
 
-
+    public $total;
 
     public function __construct()
     {
@@ -83,6 +83,26 @@ class UserModel{
     {
         $this->senha = $senha;
 
+        return $this;
+    }
+
+    public function login($email, $senha){
+        $db = new ConexaoMysql;
+
+        $db->conectar();
+        $sql = 'SELECT = FROM usuarios WHERE email = "'.$email.'"AND senha = "'.$senha.'";';
+        $resultList = $db->consultar($sql);
+        if($db->total > 0){
+            foreach ($resultList as $key => $value) {
+                $this->$value['id'];
+                $this->$value['nome'];
+                $this->$value['email'];
+                $this->$value['senha'];
+            }
+        }
+        $db->desconectar();
+        // retorna o total de registros que vem da consulta $sql no banco de dados
+        $this->total = $db->total;
         return $this;
     }
 }
